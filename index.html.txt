@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Portugalia - Minecraft Server</title>
+  <meta name="description" content="Portugalia Minecraft Server — Comunidade portuguesa de Minecraft" />
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0b1220;--card:#0f1724;--accent:#6bd67e;--muted:#94a3b8;--glass:rgba(255,255,255,0.03)
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:Inter,system-ui,Arial,sans-serif;background:linear-gradient(180deg,#07101a 0%, #051523 100%);color:#e6eef6}
+    .nav{backdrop-filter: blur(6px);background:linear-gradient(90deg, rgba(255,255,255,0.02), transparent);position:sticky;top:0;z-index:40;border-bottom:1px solid rgba(255,255,255,0.03)}
+    .container{max-width:1100px;margin:0 auto;padding:16px}
+    .nav-inner{display:flex;align-items:center;gap:16px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:52px;height:52px;border-radius:8px;background:linear-gradient(135deg,#78d68b,#3ea36c);display:flex;align-items:center;justify-content:center;font-family:'Press Start 2P',monospace;color:#072018}
+    .brand h1{font-size:16px;margin:0}
+    .brand p{font-size:11px;margin:0;color:var(--muted)}
+    nav ul{list-style:none;margin:0;padding:0;display:flex;gap:12px}
+    nav a{color:var(--muted);text-decoration:none;padding:10px 12px;border-radius:8px;font-weight:600}
+    nav a:hover{color:var(--accent);background:var(--glass)}
+    .hero{display:grid;grid-template-columns:1fr;align-items:center;gap:18px;padding:48px 0}
+    .hero-grid{display:flex;flex-direction:column;gap:12px}
+    .title{font-family:'Press Start 2P',monospace;font-size:28px;color:var(--accent);margin:0}
+    .lead{font-size:15px;color:var(--muted);max-width:720px}
+    .cta{display:flex;gap:12px;margin-top:8px}
+    .btn{padding:12px 16px;border-radius:10px;border:0;font-weight:700;cursor:pointer}
+    .btn-primary{background:linear-gradient(90deg,#4fd07a,#2ca05a);color:#04120a}
+    .btn-ghost{background:transparent;color:var(--accent);border:1px solid rgba(255,255,255,0.04)}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:18px}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);padding:14px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
+    .card h3{margin:0 0 8px 0}
+    .small{font-size:13px;color:var(--muted)}
+    section{padding:48px 0;border-top:1px dashed rgba(255,255,255,0.02)}
+    .section-title{display:flex;align-items:center;gap:12px}
+    .pixel{font-family:'Press Start 2P',monospace;color:var(--accent);font-size:12px}
+    footer{padding:24px 0;color:var(--muted);text-align:center}
+    @media (max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}.title{font-size:22px}}
+    @media (max-width:600px){nav ul{display:none}.hero{padding:28px 0}.grid{grid-template-columns:1fr}.logo{width:44px;height:44px}.title{font-size:18px}}
+    .ipbox{display:inline-block;padding:10px 12px;border-radius:8px;background:rgba(0,0,0,0.25);border:1px solid rgba(255,255,255,0.03);font-weight:700}
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <div class="brand">
+        <div class="logo">P</div>
+        <div>
+          <h1>Portugalia</h1>
+          <p>Minecraft Server</p>
+        </div>
+      </div>
+      <div style="flex:1"></div>
+      <nav aria-label="Menu principal">
+        <ul>
+          <li><a href="#inicio">Início</a></li>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#regras">Regras</a></li>
+          <li><a href="#ip">IP / Como Entrar</a></li>
+          <li><a href="#contacto">Contato / Discord</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main class="container">
+    <section id="inicio" class="hero">
+      <div class="hero-grid">
+        <h2 class="title">PORTUGALIA — Minecraft Server</h2>
+        <p class="lead">Bem-vindo ao Portugalia — uma comunidade portuguesa de Minecraft. Junta-te a nós para minigames, survival e eventos. Entra, faz amigos e constrói algo épico!</p>
+        <div class="cta">
+          <button class="btn btn-primary" onclick="copyIP()">Copiar IP</button>
+          <a class="btn btn-ghost" href="#ip">Como Entrar</a>
+          <a class="btn btn-ghost" href="#contacto">Discord</a>
+        </div>
+        <div class="grid" style="margin-top:14px">
+          <div class="card"><h3>Estado</h3><p class="small">Online — <span id="players">--</span> jogadores</p></div>
+          <div class="card"><h3>Versão</h3><p class="small">1.20.x (compatibilidade com plugins)</p></div>
+          <div class="card"><h3>Eventos</h3><p class="small">Torneios semanais e construção criativa</p></div>
+        </div>
+      </div>
+    </section>
+    <section id="sobre">
+      <div class="section-title"><div class="pixel">SOBRE</div></div>
+      <div style="margin-top:12px">
+        <p>O Portugalia é um servidor focado em comunidade: survival equilibrado, economia moderada e eventos para todos os níveis. Temos uma equipa de staff ativa e regras claras para tornar o jogo justo e divertido.</p>
+      </div>
+    </section>
+    <section id="regras">
+      <div class="section-title"><div class="pixel">REGRAS</div></div>
+      <div style="margin-top:12px">
+        <ul>
+          <li>1) Não griefing ou roubo de builds sem permissão.</li>
+          <li>2) Sem cheats, hacks ou clientes modificados para vantagem.</li>
+          <li>3) Respeito entre jogadores — sem insultos racistas/sexistas.</li>
+          <li>4) Seguir instruções da staff.</li>
+        </ul>
+      </div>
+    </section>
+    <section id="ip">
+      <div class="section-title"><div class="pixel">IP / COMO ENTRAR</div></div>
+      <div style="margin-top:12px">
+        <p>IP do servidor: <span id="server-ip" class="ipbox">Portugalia.aternos.me:46356</span></p>
+        <p class="small">Para conectar: abre o Minecraft → Multiplayer → Add Server → coloca o IP e salva. Se usas Bedrock/PE, certifica-te de que o servidor suporta essa edição.</p>
+      </div>
+    </section>
+    <section id="contacto">
+      <div class="section-title"><div class="pixel">CONTACTO</div></div>
+      <div style="margin-top:12px;display:flex;gap:12px;flex-wrap:wrap">
+        <a class="card" href="https://discord.gg/c96bPjVD" target="_blank" rel="noopener">Discord<br><small class="small">Entra no nosso servidor</small></a>
+        <a class="card" href="https://youtube.com/@minecraftportugalia?si=wST4iL5WM1mjSRgD" target="_blank" rel="noopener">YouTube<br><small class="small">Subscreve o canal oficial</small></a>
+      </div>
+      <div style="margin-top:18px">
+        <form id="contact-form" onsubmit="submitForm(event)" style="display:flex;flex-direction:column;gap:10px;max-width:520px">
+          <input required name="name" placeholder="Nome" style="padding:12px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit">
+          <input required name="email" placeholder="Email" type="email" style="padding:12px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit">
+          <textarea required name="message" rows="4" placeholder="Mensagem / Pedido" style="padding:12px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit"></textarea>
+          <button class="btn btn-primary" type="submit">Enviar</button>
+          <p id="form-msg" class="small"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+  <footer><div class="container"><p>© <span id="year"></span> Portugalia — Minecraft Server. Feito com ❤️</p></div></footer>
+  <script>
+    const SERVER_IP = 'Portugalia.aternos.me:46356';
+    document.getElementById('year').innerText = new Date().getFullYear();
+    document.getElementById('server-ip').innerText = SERVER_IP;
+    function copyIP(){navigator.clipboard?.writeText(SERVER_IP).then(()=>{alert('IP copiado para o clipboard: '+SERVER_IP)}).catch(()=>{prompt('Copia o IP manualmente:', SERVER_IP)})}
+    setTimeout(()=>{document.getElementById('players').innerText = Math.floor(Math.random()*120)},500);
+    function submitForm(e){e.preventDefault();const f=e.target;document.getElementById('form-msg').innerText='Mensagem enviada! (simulação)';f.reset()}
+  </script>
+</body>
+</html>
